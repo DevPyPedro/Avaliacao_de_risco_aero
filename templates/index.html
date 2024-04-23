@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Segurança - Aeroportos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='imagens/icon.ico') }}">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Div 1: Cadastro da Aeronave -->
+        <div class="box active" id="div1">
+            <h2>Cadastro da Aeronave</h2>
+            <form>
+                <div class="form-group">
+                    <label for="modelo">Modelo da Aeronave:</label>
+                    <input type="text" class="form-control" id="modelo" name="modelo" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria da Aeronave:</label>
+                    <input type="text" class="form-control" id="categoria" name="categoria" required>
+                </div>
+                <div class="form-group">
+                    <label for="comprimento">Comprimento da Aeronave:</label>
+                    <input type="text" class="form-control" id="comprimento" name="comprimento" required>
+                </div>
+                <div class="form-group">
+                    <label for="comprimento">Comprimento da envergadura da aeronave:</label>
+                    <input type="text" id="envergadura" name="envergadura" required>
+                </div>
+                <div class="form-group">
+                    <label for="comprimento">Altura da aeronave:</label>
+                    <input type="text" id="altura" name="altura" required>
+                </div>
+                <div class="form-group">
+                    <label for="comprimento">Raio mínimo de curva:</label>
+                    <input type="text" id="raio_curva" name="raio_curva" required>
+                </div>
+                <div class="form-group">
+                    <label for="comprimento">Distância da roda externa do trem de pouso para a borda do
+                        pavimento:</label>
+                    <input type="text" id="distancia_tremPouso_pavimenato" name="distancia_tremPouso_pavimenato"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="comprimento">Distância daroda externa do trem de pouso para a borda do pavimento(pista
+                        detáxi):</label>
+                    <input type="text" id="distancia_tremPouso_taxi" name="distancia_tremPouso_taxi" required>
+                </div>
+                <div class="btn-container">
+                    <button class="btn btn-next" onclick="nextStep()">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" class="bi bi-airplane-fill"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="text">Próximo</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Div 2: Dados do Aeroporto -->
+        <div class="box" id="div2">
+            <h2>Dados do Aeroporto</h2>
+            <label for="codigo">Digite o código do aeroporto:</label>
+            <input type="text" id="codigo" name="codigo" required>
+            <label for="largura_pista">Largura da pista de pouso e decolagem:</label>
+            <input type="text" id="largura_pista" name="largura_pista" required>
+            <label for="largura_pista">Largura da pista de taxiamento do aeroporto:</label>
+            <input type="text" id="largura_pista_taxi" name="largura_pista_taxi" required>
+            <label for="largura_pista">Largura da faixa de pista do aeroporto:</label>
+            <input type="text" id="largura_faixa" name="largura_faixa" required>
+            <label for="largura_pista">Acostamento do aeroporto:</label>
+            <input type="text" id="acostamento" name="acostamento" required>
+            <label for="largura_pista">Máximo desvio lateral:</label>
+            <input type="text" id="desvio_lateral" name="desvio_lateral" required>
+            <label for="largura_pista">Peso máximo de decolagem (MTOW):</label>
+            <input type="text" id="mtow" name="mtow" required>
+            <label for="largura_pista">Margem de segurança:</label>
+            <input type="text" id="margem_seguranca" name="margem_seguranca" required>
+            <div class="btn-container">
+                <button onclick="prevStep()">Voltar</button>
+                <button onclick="showResults()">Resultados</button>
+            </div>
+        </div>
+
+        <!-- Div 3: Resultados -->
+        <div class="box" id="div3">
+            <h2>Resultados</h2>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+
+</html>

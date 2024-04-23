@@ -1,0 +1,31 @@
+# O EditorConfig é incrível: https://EditorConfig.org
+
+# Arquivo EditorConfig no topo
+root = true
+
+[*]
+# Define o charset padrão
+charset = utf-8
+
+# Use espaços ao invés de tabulações para indentação
+indent_style = space
+indent_size = 4
+
+# Define o caractere de fim de linha
+end_of_line = lf
+
+# Remove espaços em branco no final de linhas
+trim_trailing_whitespace = true
+
+# Garante uma única nova linha no final dos arquivos
+insert_final_newline = true
+
+# Configurações específicas para Python
+[*.py]
+# Define o estilo de código Python (PEP 8)
+indent_size = 4
+max_line_length = 79
+
+# Ignora alguns arquivos
+[*.md]
+trim_trailing_whitespace = false
