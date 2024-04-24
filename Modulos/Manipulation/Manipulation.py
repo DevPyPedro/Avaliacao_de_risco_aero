@@ -34,14 +34,18 @@ class Analise:
         largura_pt_aeroporto = data[aeroporto]["largura_pt_aeroporto"]
         mtow_aeroporto = data[aeroporto]["mtow_aeroporto"]
         # CONDIÇÕES
-        if self.largura_ppd >largura_ppd_aeroporto:
+        if self.largura_ppd > largura_ppd_aeroporto:
             # A AERONAVE NÂO É COMPATIVEL COM A PISTA DE POUSO E DECOLAGEM
-            info[aeroporto][f"A aeronave nâo é compativel com a Pista de pouso e decolagem {aeroporto}"]["Largura necessaria"] = [self.largura_ppd]
-            info[aeroporto][f"A aeronave nâo é compativel com a Pista de pouso e decolagem {aeroporto}"][f"Largura da pista do aeroporto {aeroporto}"] = [largura_ppd_aeroporto]
+            info[aeroporto][f"A aeronave nâo é compativel com a Pista de pouso e decolagem {aeroporto}"]
+            info[aeroporto]["Largura necessaria" :self.largura_ppd]
+            info[aeroporto][f"A aeronave nâo é compativel com a Pista de pouso e decolagem {aeroporto}"]
+            info[aeroporto][f"Largura da pista do aeroporto {aeroporto}":largura_ppd_aeroporto]
         else:
         # A AERONAVE É COMPATIVEL COM A PISTA DE POUSO E DECOLAGEM
-            info[aeroporto][f"A aeronave é compativel com a Pista de pouso e decolagem {aeroporto}"]["Largura necessaria"] = [self.largura_ppd]
-            info[aeroporto][f"A aeronave é compativel com a Pista de pouso e decolagem {aeroporto}"][f"Largura da pista do aeroporto {aeroporto}"] = [largura_ppd_aeroporto]
+            info[aeroporto][f"A aeronave é compativel com a Pista de pouso e decolagem {aeroporto}"]
+            info[aeroporto]["Largura necessaria":self.largura_ppd]
+            info[aeroporto][f"A aeronave é compativel com a Pista de pouso e decolagem {aeroporto}"]
+            info[aeroporto][f"Largura da pista do aeroporto {aeroporto}": largura_ppd_aeroporto]
         # COMPATIBILIDADE DA TAXIWAY    
         if self.largura_pt > largura_pt_aeroporto:
             info[aeroporto]["táxiway"] = "A aeronave não é compativel com a táxiway"
