@@ -16,7 +16,7 @@ function showResults() {
 
     let results = {};
     
-    let fields = ['modelo', 'categoria', 'comprimento', 'envergadura', 'altura', 'raio_curva', 'distancia_tremPouso_pavimenato', 'distancia_tremPouso_taxi', 'codigo', 'largura_pista', 'largura_pista_taxi', 'largura_faixa', 'acostamento', 'desvio_lateral', 'mtow', 'margem_seguranca'];
+    let fields = ['modelo', 'categoria', 'comprimento', 'envergadura', 'altura', 'raio_curva', 'distancia_tremPouso_pavimenato', 'distancia_tremPouso_taxi', 'codigo', 'largura_pista', 'largura_pista_taxi', 'largura_faixa', 'acostamento', 'desvio_lateral', 'mtow', 'margem_seguranca', 'peso_vazia', 'bitola'];
 
     for (let i = 0; i < fields.length; i++) {
         let value = document.getElementById(fields[i]).value;
